@@ -1,0 +1,12 @@
+## Title: Aye.AutoOK
+## Notes: Auto OK
+## Depot: Aye
+## LoadOnDemand: 1
+## Author: Benio
+## Version: 0
+## Interface: 70000
+
+#files
+Aye.AutoOK.lua
+Aye.AutoOK.options.lua
+Aye.AutoOK.options.default.lua
