@@ -49,6 +49,13 @@ Aye.modules.AutoOK.OnEnable = function()
 	Aye.modules.AutoOK.CheckTypeDELETEtoConfirm();
 end;
 
+Aye.modules.AutoOK.events.PLAYER_ENTERING_WORLD = function()
+	-- Automatically Set cameraDistanceMaxFactor CVAR to Maximum (2.6)
+	if Aye.db.global.AutoOK.cameraDistanceMaxFactor then
+		SetCVar("cameraDistanceMaxFactor", 2.6);
+	end;
+end;
+
 -- Either backup original StaticPopupDialogs or replace them with ones without "Type DELETE into the field to confirm." confirmation
 --
 -- @noparam

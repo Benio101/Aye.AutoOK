@@ -13,4 +13,5 @@ Aye.default.global.AutoOK = {
 	
 	DisableTypeDELETEtoConfirm = true,
 	CONFIRM_MERCHANT_TRADE_TIMER_REMOVAL = false,
+	cameraDistanceMaxFactor = false,
 };
