@@ -134,5 +134,15 @@ Aye.options.args.AutoOK = {
 				.. "This allows to Zoom Out Camera to maximum allowed distance."
 			,
 		},
+		TALKINGHEAD_REQUESTED = {
+			order = 28,
+			name = "Remove Talking Head",
+			desc = "Automatically remove Talking Head",
+			type = "toggle",
+			width = "full",
+			get = function() return Aye.db.global.AutoOK.TALKINGHEAD_REQUESTED end,
+			set = function(_, v) Aye.db.global.AutoOK.TALKINGHEAD_REQUESTED = v end,
+			disabled = function() return not Aye.db.global.AutoOK.enable end,
+		},
 	},
 };

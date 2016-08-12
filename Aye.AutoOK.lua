@@ -54,6 +54,11 @@ Aye.modules.AutoOK.events.PLAYER_ENTERING_WORLD = function()
 	if Aye.db.global.AutoOK.cameraDistanceMaxFactor then
 		SetCVar("cameraDistanceMaxFactor", 2.6);
 	end;
+	
+	-- Remove Talking Head
+	if Aye.db.global.AutoOK.TALKINGHEAD_REQUESTED then
+		UIParent:UnregisterEvent("TALKINGHEAD_REQUESTED");
+	end;
 end;
 
 -- Either backup original StaticPopupDialogs or replace them with ones without "Type DELETE into the field to confirm." confirmation
