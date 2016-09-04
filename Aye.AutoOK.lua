@@ -54,10 +54,15 @@ Aye.modules.AutoOK.events.PLAYER_ENTERING_WORLD = function()
 	if Aye.db.global.AutoOK.cameraDistanceMaxFactor then
 		SetCVar("cameraDistanceMaxFactor", 2.6);
 	end;
-	
+end;
+
+Aye.modules.AutoOK.events.ADDON_LOADED = function(addon)
 	-- Remove Talking Head
-	if Aye.db.global.AutoOK.TALKINGHEAD_REQUESTED then
-		UIParent:UnregisterEvent("TALKINGHEAD_REQUESTED");
+	if
+			Aye.db.global.AutoOK.TALKINGHEAD_REQUESTED
+		and	addon == "Blizzard_TalkingHeadUI"
+	then
+		TalkingHeadFrame:UnregisterEvent("TALKINGHEAD_REQUESTED");
 	end;
 end;
 
