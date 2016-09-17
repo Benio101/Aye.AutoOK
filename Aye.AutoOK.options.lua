@@ -42,6 +42,19 @@ Aye.options.args.AutoOK = {
 			,
 			hidden = function() return Aye.db.global.AutoOK.enable end,
 		},
+		execute7 = {
+			order = 7,
+			type = "execute",
+			name = "Default module settings",
+			desc = "Reset settings of this module to default.\n\n|cff9d9d9dIf you wish to reset settings of all Aye modules instead, "
+				.. "use \"Defaults\" options from left bottom corner of \"Interface\" window, then select \"These Settings\".|r"
+			,
+			func = function()
+				Aye.db.global.AutoOK = CopyTable(Aye.default.global.AutoOK);
+				Aye.libs.ConfigRegistry:NotifyChange("Aye");
+			end,
+			hidden = function() return not Aye.db.global.AutoOK.enable end,
+		},
 		header11 = {
 			order = 11,
 			type = "header",
