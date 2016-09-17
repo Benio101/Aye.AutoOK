@@ -24,6 +24,28 @@ LFDRoleCheckPopupAcceptButton:HookScript("OnShow", function(self)
 end);
 
 -- PopUp OnShow
+-- LFG Appplication info
+LFGListApplicationDialog.SignUpButton:HookScript("OnShow", function(self)
+	if
+			Aye.db.global.AutoOK.enable
+		and	Aye.db.global.AutoOK.LFDRoleCheckPopupAcceptButton
+	then
+		self:Click();
+	end;
+end);
+
+-- PopUp OnShow
+-- LFG invite popup
+LFGInvitePopupAcceptButton:HookScript("OnShow", function(self)
+	if
+			Aye.db.global.AutoOK.enable
+		and	Aye.db.global.AutoOK.LFDRoleCheckPopupAcceptButton
+	then
+		self:Click();
+	end;
+end);
+
+-- PopUp OnShow
 -- selling items that "will make it non-tradeable, even if you buy it back"
 hooksecurefunc("StaticPopup_Show", function(self)
 	if self == "CONFIRM_MERCHANT_TRADE_TIMER_REMOVAL" then
