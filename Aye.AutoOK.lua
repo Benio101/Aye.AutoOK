@@ -13,19 +13,19 @@ LFGListInviteDialog.AcknowledgeButton:HookScript("OnShow", function(self)
 end);
 
 -- PopUp OnShow
--- LFD Role Check
-LFDRoleCheckPopupAcceptButton:HookScript("OnShow", function(self)
+-- LFG rules showing after joining some premade groups
+LFGListInviteDialog.AcceptButton:HookScript("OnShow", function(self)
 	if
 			Aye.db.global.AutoOK.enable
-		and	Aye.db.global.AutoOK.LFDRoleCheckPopupAcceptButton
+		and	Aye.db.global.AutoOK.LFGListInviteDialog
 	then
 		self:Click();
 	end;
 end);
 
 -- PopUp OnShow
--- LFG Appplication info
-LFGListApplicationDialog.SignUpButton:HookScript("OnShow", function(self)
+-- LFD Role Check
+LFDRoleCheckPopupAcceptButton:HookScript("OnShow", function(self)
 	if
 			Aye.db.global.AutoOK.enable
 		and	Aye.db.global.AutoOK.LFDRoleCheckPopupAcceptButton
@@ -40,6 +40,17 @@ LFGInvitePopupAcceptButton:HookScript("OnShow", function(self)
 	if
 			Aye.db.global.AutoOK.enable
 		and	Aye.db.global.AutoOK.LFDRoleCheckPopupAcceptButton
+	then
+		self:Click();
+	end;
+end);
+
+-- PopUp OnShow
+-- LFG Appplication info
+LFGListApplicationDialog.SignUpButton:HookScript("OnShow", function(self)
+	if
+			Aye.db.global.AutoOK.enable
+		and	Aye.db.global.AutoOK.LFGListApplicationDialog
 	then
 		self:Click();
 	end;

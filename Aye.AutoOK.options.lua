@@ -62,8 +62,8 @@ Aye.options.args.AutoOK = {
 		},
 		LFGListInviteDialog = {
 			order = 13,
-			name = "LFGListInviteDialog.AcknowledgeButton",
-			desc = "Automatically click LFGListInviteDialog.AcknowledgeButton OnShow",
+			name = "LFGListInviteDialog",
+			desc = "Automatically Accept and Acknowledge LFGListInviteDialog",
 			type = "toggle",
 			width = "full",
 			get = function() return Aye.db.global.AutoOK.LFGListInviteDialog end,
@@ -156,6 +156,29 @@ Aye.options.args.AutoOK = {
 			get = function() return Aye.db.global.AutoOK.TALKINGHEAD_REQUESTED end,
 			set = function(_, v) Aye.db.global.AutoOK.TALKINGHEAD_REQUESTED = v end,
 			disabled = function() return not Aye.db.global.AutoOK.enable end,
+		},
+		description29 = {
+			order = 29,
+			type = "description",
+			name = "Automatically remove Talking Head Frame and it's talking sound.\n"
+				.. "|cffe6cc80Recommendation|r|cff9d9d9d: Enable only if you never ever want to see nor hear Talking Head Frames.|r"
+			,
+		},
+		LFGListApplicationDialog = {
+			order = 31,
+			name = "LFGListApplicationDialog",
+			desc = "Automatically accept LFGListApplicationDialog, leaving empty description",
+			type = "toggle",
+			width = "full",
+			get = function() return Aye.db.global.AutoOK.LFGListApplicationDialog end,
+			set = function(_, v) Aye.db.global.AutoOK.LFGListApplicationDialog = v end,
+			disabled = function() return not Aye.db.global.AutoOK.enable end,
+		},
+		description32 = {
+			order = 32,
+			type = "description",
+			name = "Auto |cffe6cc80Accept application|r to custom group, leaving empty description.\n"
+				.. "|cffe6cc80Recommendation|r|cff9d9d9d: Enable only if your never describe your custom group applications.|r",
 		},
 	},
 };

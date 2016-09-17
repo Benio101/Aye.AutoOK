@@ -15,4 +15,5 @@ Aye.default.global.AutoOK = {
 	CONFIRM_MERCHANT_TRADE_TIMER_REMOVAL = false,
 	cameraDistanceMaxFactor = false,
 	TALKINGHEAD_REQUESTED = false,
+	LFGListApplicationDialog = false,
 };
