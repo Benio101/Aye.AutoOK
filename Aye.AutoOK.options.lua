@@ -130,23 +130,6 @@ Aye.options.args.AutoOK = {
 				.. "|cffe6cc80Recommendation|r|cff9d9d9d: Enable only if you always read carefully what item are you selling.|r"
 			,
 		},
-		cameraDistanceMaxFactor = {
-			order = 25,
-			name = "Set Camera Distance Max Factor to Maximum",
-			desc = "Automatically Set cameraDistanceMaxFactor CVAR to Maximum (2.6)",
-			type = "toggle",
-			width = "full",
-			get = function() return Aye.db.global.AutoOK.cameraDistanceMaxFactor end,
-			set = function(_, v) Aye.db.global.AutoOK.cameraDistanceMaxFactor = v end,
-			disabled = function() return not Aye.db.global.AutoOK.enable end,
-		},
-		description26 = {
-			order = 26,
-			type = "description",
-			name = "Automatically set |cffe6cc80cameraDistanceMaxFactor|r CVAR to |cffe6cc802.6|r (max).\n"
-				.. "This allows to Zoom Out Camera to maximum allowed distance."
-			,
-		},
 		TALKINGHEAD_REQUESTED = {
 			order = 28,
 			name = "Remove Talking Head",
