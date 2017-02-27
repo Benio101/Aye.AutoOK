@@ -69,6 +69,56 @@ hooksecurefunc("StaticPopup_Show", function(self)
 	end;
 end);
 
+-- PopUp OnShow
+-- LFG group formed
+LFGDungeonReadyDialogLeaveQueueButton:HookScript("OnShow", function(self)
+	if
+			Aye.db.global.AutoOK.enable
+		and	Aye.db.global.AutoOK.LFGDungeonReadyDialogLeaveQueueButton
+	then
+		local _, id, typeID, subtypeID, name, _, _, _, _, _, _, isLeader = GetLFGProposal();
+		if
+			-- must be group leader to check
+				(
+						not IsInGroup()
+					or	UnitIsGroupLeader("player")
+				)
+			
+			-- skip non-LFR group invites
+			and	typeID		== TYPEID_DUNGEON
+			and	subtypeID	== LFG_SUBTYPEID_RAID
+			
+			-- skip encounters with only 1 boss
+			and	id ~= 1289	-- Rift of Aln			-- Xavius
+			and	id ~= 1293	-- Betrayer's Rise		-- Gul'dan
+			
+			-- must be a leader
+			and	not isLeader
+		then
+			-- Note about skipped invitations
+			if Aye.db.global.AutoOK.LFGDungeonReadyDialogLeaveQueueButton_desc then
+				print("[Aye] Skipped invitation to |cffe6cc80\"" ..name .."\"|r group, because not chosen as leader.");
+			end;
+			
+			-- leave queue
+			self:Click();
+			
+			-- requeue
+			if Aye.db.global.AutoOK.LFGDungeonReadyDialogLeaveQueueButton_openFrame then
+				if PVEFrame:IsShown() then PVEFrame_ToggleFrame() end;
+				PVEFrame_ToggleFrame("GroupFinderFrame", RaidFinderFrame);
+				
+				RaidFinderQueueFrame_SetRaid(id);
+				RaidFinderQueueFrameRoleButtonLeader.checkButton:SetChecked(true);
+				
+				-- cannot call, it's protected
+				--RaidFinderFrameFindRaidButton:Click();
+				--PVEFrame_ToggleFrame("GroupFinderFrame", RaidFinderFrame);
+			end;
+		end;
+	end;
+end);
+
 Aye.modules.AutoOK.OnEnable = function()
 	-- backup object
 	Aye.modules.AutoOK.bak = {};

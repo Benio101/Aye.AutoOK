@@ -15,4 +15,7 @@ Aye.default.global.AutoOK = {
 	CONFIRM_MERCHANT_TRADE_TIMER_REMOVAL = false,
 	TALKINGHEAD_REQUESTED = false,
 	LFGListApplicationDialog = false,
+	LFGDungeonReadyDialogLeaveQueueButton = false,
+	LFGDungeonReadyDialogLeaveQueueButton_desc = true,
+	LFGDungeonReadyDialogLeaveQueueButton_openFrame = true,
 };

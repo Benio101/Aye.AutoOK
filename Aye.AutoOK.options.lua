@@ -163,5 +163,56 @@ Aye.options.args.AutoOK = {
 			name = "Auto |cffe6cc80Accept application|r to custom group, leaving empty description.\n"
 				.. "|cffe6cc80Recommendation|r|cff9d9d9d: Enable only if your never describe your custom group applications.|r",
 		},
+		header41 = {
+			order = 41,
+			type = "header",
+			name = "\"Auto Requeue\" options",
+		},
+		LFGDungeonReadyDialogLeaveQueueButton = {
+			order = 43,
+			name = "Decline LFR invitation if not leader",
+			desc = "Automatically decline LFG if not chosen as leader",
+			type = "toggle",
+			width = "full",
+			get = function() return Aye.db.global.AutoOK.LFGDungeonReadyDialogLeaveQueueButton end,
+			set = function(_, v) Aye.db.global.AutoOK.LFGDungeonReadyDialogLeaveQueueButton = v end,
+			disabled = function() return not Aye.db.global.AutoOK.enable end,
+		},
+		description44 = {
+			order = 44,
+			type = "description",
+			name = "Auto |cffe6cc80Decline|r LFR Ready Dialog if not chosen as leader.\n"
+				.. "|cffe6cc80Recommendation|r|cff9d9d9d: Enable only if want to always lead LFG PuG raids and never join into ongoing runs.|r"
+				.. " |cffe6cc80WARNING!|r|cff9d9d9d Choosing this option can increase your queue time a lot.\n\n|r"
+				.. "|cff9d9d9dThis works for LFR queues only, with the exception of fights with one boss only:\n"
+				.. " • Rift of Aln (Xavius)\n • Betrayer's Rise (Gul'dan)\n\n|r|cffe6cc80Purpose|cff9d9d9d: Avoid joining over and over into ongoing groups (ex. from 2nd boss).|r"
+			,
+		},
+		LFGDungeonReadyDialogLeaveQueueButton_desc = {
+			order = 45,
+			name = "Note about skipped LFR",
+			desc = "[Aye] Skipped invitation to |cffe6cc80\"name\"|r group, because not chosen as leader.",
+			type = "toggle",
+			get = function() return Aye.db.global.AutoOK.LFGDungeonReadyDialogLeaveQueueButton_desc end,
+			set = function(_, v) Aye.db.global.AutoOK.LFGDungeonReadyDialogLeaveQueueButton_desc = v end,
+			disabled = function() return
+					not Aye.db.global.AutoOK.enable
+				or	not Aye.db.global.AutoOK.LFGDungeonReadyDialogLeaveQueueButton
+			end,
+		},
+		LFGDungeonReadyDialogLeaveQueueButton_openFrame = {
+			order = 46,
+			name = "Open frame to requeue",
+			desc = "Upon declining the queue, open LFR frame prepared to requeue, requiring you just to click the |cffe6cc80\"Find Group\"|r button again.\n\n"
+				.. "|cff9d9d9dChoosing this option will always set |r|cffe6cc80Queue|r|cff9d9d9d window to last declined LFR encounter.|r"
+			,
+			type = "toggle",
+			get = function() return Aye.db.global.AutoOK.LFGDungeonReadyDialogLeaveQueueButton_openFrame end,
+			set = function(_, v) Aye.db.global.AutoOK.LFGDungeonReadyDialogLeaveQueueButton_openFrame = v end,
+			disabled = function() return
+					not Aye.db.global.AutoOK.enable
+				or	not Aye.db.global.AutoOK.LFGDungeonReadyDialogLeaveQueueButton
+			end,
+		},
 	},
 };
