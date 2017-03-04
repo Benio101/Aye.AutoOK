@@ -7,6 +7,8 @@ Automatically **Accept** chosen invitations, respond **OK** to chosen dialogs, e
 ## Options
 Aye.AutoOK provides ability to avoid some repeating, annoying confirmations. And you decide, which ones.
 
+To access options, open Game Memu → Interface → Addons tab → Aye → Aye.AutoOK.
+
 ## Depot
 This addon uses [Aye](https://github.com/Benio101/Aye) as depot.
 
