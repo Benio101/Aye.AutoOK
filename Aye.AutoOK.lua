@@ -78,14 +78,8 @@ LFGDungeonReadyDialogLeaveQueueButton:HookScript("OnShow", function(self)
 	then
 		local _, id, typeID, subtypeID, name, _, _, _, _, _, _, isLeader = GetLFGProposal();
 		if
-			-- must be group leader to check
-				(
-						not IsInGroup()
-					or	UnitIsGroupLeader("player")
-				)
-			
 			-- skip non-LFR group invites
-			and	typeID		== TYPEID_DUNGEON
+				typeID		== TYPEID_DUNGEON
 			and	subtypeID	== LFG_SUBTYPEID_RAID
 			
 			-- skip encounters with only 1 boss
