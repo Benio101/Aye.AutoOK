@@ -1,6 +1,8 @@
 local Aye = Aye;
 if not Aye.addModule("Aye.AutoOK") then return end;
 
+-- LFGListInviteDialog
+--
 -- PopUp OnShow
 -- LFG rules showing after joining some LFG groups
 LFGListInviteDialog.AcknowledgeButton:HookScript("OnShow", function(self)
@@ -11,7 +13,7 @@ LFGListInviteDialog.AcknowledgeButton:HookScript("OnShow", function(self)
 		self:Click();
 	end;
 end);
-
+--
 -- PopUp OnShow
 -- LFG rules showing after joining some premade groups
 LFGListInviteDialog.AcceptButton:HookScript("OnShow", function(self)
@@ -23,6 +25,8 @@ LFGListInviteDialog.AcceptButton:HookScript("OnShow", function(self)
 	end;
 end);
 
+-- LFDRoleCheckPopupAcceptButton
+--
 -- PopUp OnShow
 -- LFD Role Check
 LFDRoleCheckPopupAcceptButton:HookScript("OnShow", function(self)
@@ -33,7 +37,7 @@ LFDRoleCheckPopupAcceptButton:HookScript("OnShow", function(self)
 		self:Click();
 	end;
 end);
-
+--
 -- PopUp OnShow
 -- LFG invite popup
 LFGInvitePopupAcceptButton:HookScript("OnShow", function(self)
@@ -45,6 +49,8 @@ LFGInvitePopupAcceptButton:HookScript("OnShow", function(self)
 	end;
 end);
 
+-- LFGListApplicationDialog
+--
 -- PopUp OnShow
 -- LFG Appplication info
 LFGListApplicationDialog.SignUpButton:HookScript("OnShow", function(self)
@@ -56,6 +62,8 @@ LFGListApplicationDialog.SignUpButton:HookScript("OnShow", function(self)
 	end;
 end);
 
+-- CONFIRM_MERCHANT_TRADE_TIMER_REMOVAL
+--
 -- PopUp OnShow
 -- selling items that "will make it non-tradeable, even if you buy it back"
 hooksecurefunc("StaticPopup_Show", function(self)
@@ -69,6 +77,8 @@ hooksecurefunc("StaticPopup_Show", function(self)
 	end;
 end);
 
+-- LFGDungeonReadyDialogLeaveQueueButton
+--
 -- PopUp OnShow
 -- LFG group formed
 LFGDungeonReadyDialogLeaveQueueButton:HookScript("OnShow", function(self)
@@ -91,7 +101,7 @@ LFGDungeonReadyDialogLeaveQueueButton:HookScript("OnShow", function(self)
 		then
 			-- Note about skipped invitations
 			if Aye.db.global.AutoOK.LFGDungeonReadyDialogLeaveQueueButton_desc then
-				print("[Aye] Skipped invitation to |cffe6cc80\"" ..name .."\"|r group, because not chosen as leader.");
+				print("|cff9d9d9d[|r|cffe6cc80Aye|r|cff9d9d9d]|r Skipped invitation to |cff9d9d9d\"|r|cffe6cc80" ..name .."|r|cff9d9d9d\"|r group, because not chosen as leader.");
 			end;
 			
 			-- leave queue
@@ -126,16 +136,7 @@ Aye.modules.AutoOK.OnEnable = function()
 	Aye.modules.AutoOK.CheckTypeDELETEtoConfirm();
 end;
 
-Aye.modules.AutoOK.events.ADDON_LOADED = function(addon)
-	-- Remove Talking Head
-	if
-			Aye.db.global.AutoOK.TALKINGHEAD_REQUESTED
-		and	addon == "Blizzard_TalkingHeadUI"
-	then
-		TalkingHeadFrame:UnregisterEvent("TALKINGHEAD_REQUESTED");
-	end;
-end;
-
+-- DisableTypeDELETEtoConfirm
 -- Either backup original StaticPopupDialogs or replace them with ones without "Type DELETE into the field to confirm." confirmation
 --
 -- @noparam
@@ -152,5 +153,16 @@ Aye.modules.AutoOK.CheckTypeDELETEtoConfirm = function()
 		-- backup StaticPopupDialogs.DELETE_GOOD_ITEM and StaticPopupDialogs.DELETE_GOOD_QUEST_ITEM
 		StaticPopupDialogs.DELETE_GOOD_ITEM = Aye.modules.AutoOK.bak.StaticPopupDialogs.DELETE_GOOD_ITEM;
 		StaticPopupDialogs.DELETE_GOOD_QUEST_ITEM = Aye.modules.AutoOK.bak.StaticPopupDialogs.DELETE_GOOD_QUEST_ITEM;
+	end;
+end;
+
+Aye.modules.AutoOK.events.ADDON_LOADED = function(addon)
+	-- TALKINGHEAD_REQUESTED
+	-- Remove Talking Head
+	if
+			Aye.db.global.AutoOK.TALKINGHEAD_REQUESTED
+		and	addon == "Blizzard_TalkingHeadUI"
+	then
+		TalkingHeadFrame:UnregisterEvent("TALKINGHEAD_REQUESTED");
 	end;
 end;

@@ -62,8 +62,8 @@ Aye.options.args.AutoOK = {
 		},
 		LFGListInviteDialog = {
 			order = 13,
-			name = "LFGListInviteDialog",
-			desc = "Automatically Accept and Acknowledge LFGListInviteDialog",
+			name = "|cffe6cc80Accept|r Group Invite",
+			desc = "Automatically |cffe6cc80Accept|r and |cffe6cc80Acknowledge|r |cff9d9d9dLFGListInviteDialog|r",
 			type = "toggle",
 			width = "full",
 			get = function() return Aye.db.global.AutoOK.LFGListInviteDialog end,
@@ -79,8 +79,8 @@ Aye.options.args.AutoOK = {
 		},
 		LFDRoleCheckPopupAcceptButton = {
 			order = 16,
-			name = "LFDRoleCheckPopupAcceptButton",
-			desc = "Automatically click LFDRoleCheckPopupAcceptButton OnShow",
+			name = "|cffe6cc80Accept|r Role",
+			desc = "Automatically |cffe6cc80Accept Role|r by clicking |cff9d9d9dLFDRoleCheckPopupAcceptButton|r and |cff9d9d9dLFGInvitePopupAcceptButton|r buttons |cff9d9d9dOnShow|r",
 			type = "toggle",
 			width = "full",
 			get = function() return Aye.db.global.AutoOK.LFDRoleCheckPopupAcceptButton end,
@@ -90,13 +90,29 @@ Aye.options.args.AutoOK = {
 		description17 = {
 			order = 17,
 			type = "description",
-			name = "Auto |cffe6cc80Accept role|r on LFD Role Check Pupup.\n"
+			name = "Auto |cffe6cc80Accept Role|r on Role Check Pupup.\n"
 				.. "|cffe6cc80Recommendation|r|cff9d9d9d: Enable only if your role does not change.|r",
 		},
-		DisableTypeDELETEtoConfirm = {
+		LFGListApplicationDialog = {
 			order = 19,
-			name = "Disable \"Type DELETE into the field to confirm.\"",
-			desc = "Automatically disables \"Type DELETE into the field to confirm.\" confirmation.",
+			name = "|cffe6cc80Accept|r Premade Application",
+			desc = "Automatically |cffe6cc80Accept|r Premade Application, clicking |cff9d9d9dLFGListApplicationDialog.SignUpButton|r button |cff9d9d9dOnShow|r, and leaving empty description",
+			type = "toggle",
+			width = "full",
+			get = function() return Aye.db.global.AutoOK.LFGListApplicationDialog end,
+			set = function(_, v) Aye.db.global.AutoOK.LFGListApplicationDialog = v end,
+			disabled = function() return not Aye.db.global.AutoOK.enable end,
+		},
+		description20 = {
+			order = 20,
+			type = "description",
+			name = "Auto |cffe6cc80Accept|r Premade Application to custom group, leaving empty description.\n"
+				.. "|cffe6cc80Recommendation|r|cff9d9d9d: Enable only if your never describe your custom group applications.|r",
+		},
+		DisableTypeDELETEtoConfirm = {
+			order = 41,
+			name = "|cffe6cc80Disable|r |cff9d9d9d\"Type DELETE into the field to confirm.\"|r",
+			desc = "Automatically |cffe6cc80Disable|r |cff9d9d9d\"Type DELETE into the field to confirm.\"|r confirmation.",
 			type = "toggle",
 			width = "full",
 			get = function() return Aye.db.global.AutoOK.DisableTypeDELETEtoConfirm end,
@@ -106,80 +122,64 @@ Aye.options.args.AutoOK = {
 			end,
 			disabled = function() return not Aye.db.global.AutoOK.enable end,
 		},
-		description20 = {
-			order = 20,
+		description42 = {
+			order = 42,
 			type = "description",
-			name = "|cffe6cc80Disable|r \"Type DELETE into the field to confirm.\" confirmation.\n"
+			name = "|cffe6cc80Disable|r |cff9d9d9d\"Type DELETE into the field to confirm.\"|r confirmation.\n"
 				.. "|cffe6cc80Recommendation|r|cff9d9d9d: Enable only if you always read carefully what item are you destroying.|r"
 			,
 		},
 		CONFIRM_MERCHANT_TRADE_TIMER_REMOVAL = {
-			order = 22,
-			name = "CONFIRM_MERCHANT_TRADE_TIMER_REMOVAL",
-			desc = "Automatically click CONFIRM_MERCHANT_TRADE_TIMER_REMOVAL OnShow",
+			order = 45,
+			name = "|cffe6cc80Accept|r Selling tradable items",
+			desc = "Automatically |cffe6cc80Accept|r Selling tradable items by clicking |cff9d9d9dCONFIRM_MERCHANT_TRADE_TIMER_REMOVAL|r button |cff9d9d9dOnShow|r",
 			type = "toggle",
 			width = "full",
 			get = function() return Aye.db.global.AutoOK.CONFIRM_MERCHANT_TRADE_TIMER_REMOVAL end,
 			set = function(_, v) Aye.db.global.AutoOK.CONFIRM_MERCHANT_TRADE_TIMER_REMOVAL = v end,
 			disabled = function() return not Aye.db.global.AutoOK.enable end,
 		},
-		description23 = {
-			order = 23,
+		description46 = {
+			order = 46,
 			type = "description",
-			name = "Auto |cffe6cc80Accept|r selling items that |cff9d9d9d\"will make it non-tradeable, even if you buy it back\"|r.\n"
+			name = "Auto |cffe6cc80Accept|r Selling items that |cff9d9d9d\"will make it non-tradeable, even if you buy it back\"|r.\n"
 				.. "|cffe6cc80Recommendation|r|cff9d9d9d: Enable only if you always read carefully what item are you selling.|r"
 			,
 		},
 		TALKINGHEAD_REQUESTED = {
-			order = 28,
-			name = "Remove Talking Head",
-			desc = "Automatically remove Talking Head",
+			order = 61,
+			name = "|cffe6cc80Remove|r Talking Head",
+			desc = "Automatically |cffe6cc80Remove|r Talking Head",
 			type = "toggle",
 			width = "full",
 			get = function() return Aye.db.global.AutoOK.TALKINGHEAD_REQUESTED end,
 			set = function(_, v) Aye.db.global.AutoOK.TALKINGHEAD_REQUESTED = v end,
 			disabled = function() return not Aye.db.global.AutoOK.enable end,
 		},
-		description29 = {
-			order = 29,
+		description62 = {
+			order = 62,
 			type = "description",
-			name = "Automatically remove Talking Head Frame and it's talking sound.\n"
-				.. "|cffe6cc80Recommendation|r|cff9d9d9d: Enable only if you never ever want to see nor hear Talking Head Frames.|r"
+			name = "Automatically |cffe6cc80Remove|r Talking Head Frame and it's talking sound.\n"
+				.. "|cffe6cc80Recommendation|r|cff9d9d9d: Enable only if you never want to see nor hear Talking Heads.|r"
 			,
 		},
-		LFGListApplicationDialog = {
-			order = 31,
-			name = "LFGListApplicationDialog",
-			desc = "Automatically accept LFGListApplicationDialog, leaving empty description",
-			type = "toggle",
-			width = "full",
-			get = function() return Aye.db.global.AutoOK.LFGListApplicationDialog end,
-			set = function(_, v) Aye.db.global.AutoOK.LFGListApplicationDialog = v end,
-			disabled = function() return not Aye.db.global.AutoOK.enable end,
-		},
-		description32 = {
-			order = 32,
-			type = "description",
-			name = "Auto |cffe6cc80Accept application|r to custom group, leaving empty description.\n"
-				.. "|cffe6cc80Recommendation|r|cff9d9d9d: Enable only if your never describe your custom group applications.|r",
-		},
-		header41 = {
-			order = 41,
+		header81 = {
+			order = 81,
 			type = "header",
 			name = "\"Auto Requeue\" options",
 		},
 		LFGDungeonReadyDialogLeaveQueueButton = {
-			order = 43,
-			name = "Decline LFR invitation if not leader",
-			desc = "Automatically decline LFG if not chosen as leader",
+			order = 83,
+			name = "|cffe6cc80Decline|r LFR invitation if not leader",
+			desc = "Automatically |cffe6cc80Decline|r LFG invitation if not chosen as leader",
 			type = "toggle",
 			width = "full",
 			get = function() return Aye.db.global.AutoOK.LFGDungeonReadyDialogLeaveQueueButton end,
 			set = function(_, v) Aye.db.global.AutoOK.LFGDungeonReadyDialogLeaveQueueButton = v end,
 			disabled = function() return not Aye.db.global.AutoOK.enable end,
 		},
-		description44 = {
-			order = 44,
+		description84 = {
+			order = 84,
 			type = "description",
 			name = "Auto |cffe6cc80Decline|r LFR Ready Dialog if not chosen as leader.\n"
 				.. "|cffe6cc80Recommendation|r|cff9d9d9d: Enable only if want to always lead LFG PuG raids and never join into ongoing runs.|r"
@@ -189,9 +189,9 @@ Aye.options.args.AutoOK = {
 			,
 		},
 		LFGDungeonReadyDialogLeaveQueueButton_desc = {
-			order = 45,
+			order = 85,
 			name = "Note about skipped LFR",
-			desc = "[Aye] Skipped invitation to |cffe6cc80\"name\"|r group, because not chosen as leader.",
+			desc = "|cff9d9d9d[|r|cffe6cc80Aye|r|cff9d9d9d]|r Skipped invitation to |cff9d9d9d\"|r|cffe6cc80Your Worst Nightmare|r|cff9d9d9d\"|r group, because not chosen as leader.",
 			type = "toggle",
 			get = function() return Aye.db.global.AutoOK.LFGDungeonReadyDialogLeaveQueueButton_desc end,
 			set = function(_, v) Aye.db.global.AutoOK.LFGDungeonReadyDialogLeaveQueueButton_desc = v end,
@@ -201,9 +201,9 @@ Aye.options.args.AutoOK = {
 			end,
 		},
 		LFGDungeonReadyDialogLeaveQueueButton_openFrame = {
-			order = 46,
+			order = 86,
 			name = "Open frame to requeue",
-			desc = "Upon declining the queue, open LFR frame prepared to requeue, requiring you just to click the |cffe6cc80\"Find Group\"|r button again.\n\n"
+			desc = "Upon declining the queue, open LFR frame prepared to requeue, requiring you just to click the |cffe6cc80Find Group|r button again.\n\n"
 				.. "|cff9d9d9dChoosing this option will always set |r|cffe6cc80Queue|r|cff9d9d9d window to last declined LFR encounter.|r"
 			,
 			type = "toggle",
