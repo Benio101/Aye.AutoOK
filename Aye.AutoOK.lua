@@ -96,6 +96,7 @@ LFGDungeonReadyDialogLeaveQueueButton:HookScript("OnShow", function(self)
 			-- skip encounters with only 1 boss
 			and	id ~= 1289	-- Rift of Aln			-- Xavius
 			and	id ~= 1293	-- Betrayer's Rise		-- Gul'dan
+			and	id ~= 1497	-- Deceiver's Fall		-- Kil'jaeden
 			
 			-- must be a leader
 			and	not isLeader
