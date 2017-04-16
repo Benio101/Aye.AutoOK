@@ -72,7 +72,8 @@ hooksecurefunc("StaticPopup_Show", function(self)
 				Aye.db.global.AutoOK.enable
 			and	Aye.db.global.AutoOK.CONFIRM_MERCHANT_TRADE_TIMER_REMOVAL
 		then
-			StaticPopup1Button1:Click();
+			local popup = StaticPopup_Visible("CONFIRM_MERCHANT_TRADE_TIMER_REMOVAL");
+			_G[popup .."Button1"]:Click();
 		end;
 	end;
 end);
