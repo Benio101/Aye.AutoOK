@@ -153,7 +153,17 @@ Aye.options.args.AutoOK = {
 			type = "toggle",
 			width = "full",
 			get = function() return Aye.db.global.AutoOK.TALKINGHEAD_REQUESTED end,
-			set = function(_, v) Aye.db.global.AutoOK.TALKINGHEAD_REQUESTED = v end,
+			set = function(_, v)
+				Aye.db.global.AutoOK.TALKINGHEAD_REQUESTED = v;
+				
+				if Aye.db.global.AutoOK.TALKINGHEAD_REQUESTED then
+					-- Disable Talking Head
+					TalkingHeadFrame:UnregisterEvent("TALKINGHEAD_REQUESTED");
+				else
+					-- Enable Talking Head
+					TalkingHeadFrame:RegisterEvent("TALKINGHEAD_REQUESTED");
+				end;
+			end,
 			disabled = function() return not Aye.db.global.AutoOK.enable end,
 		},
 		description62 = {
