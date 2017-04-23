@@ -162,7 +162,8 @@ Aye.modules.AutoOK.events.ADDON_LOADED = function(addon)
 	-- TALKINGHEAD_REQUESTED
 	-- Remove Talking Head
 	if
-			Aye.db.global.AutoOK.TALKINGHEAD_REQUESTED
+			Aye.db.global.AutoOK.enable
+		and	Aye.db.global.AutoOK.TALKINGHEAD_REQUESTED
 		and	addon == "Blizzard_TalkingHeadUI"
 	then
 		TalkingHeadFrame:UnregisterEvent("TALKINGHEAD_REQUESTED");
