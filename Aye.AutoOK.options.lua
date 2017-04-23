@@ -156,6 +156,7 @@ Aye.options.args.AutoOK = {
 			set = function(_, v)
 				Aye.db.global.AutoOK.TALKINGHEAD_REQUESTED = v;
 				
+				-- Live update
 				if Aye.db.global.AutoOK.TALKINGHEAD_REQUESTED then
 					-- Disable Talking Head
 					TalkingHeadFrame:UnregisterEvent("TALKINGHEAD_REQUESTED");
