@@ -13,7 +13,7 @@ Aye.options.args.AutoOK = {
 		description2 = {
 			order = 2,
 			type = "description",
-			name = "Automatically |cffe6cc80Accept|r chosen invitations, respond |cffe6cc80OK|r to chosen dialogs, etc.",
+			name = "Automatically |cffe6cc80Accept|r chosen invitations, respond |cffe6cc80OK|r to chosen dialogs, etc.\n",
 		},
 		enable = {
 			order = 3,
