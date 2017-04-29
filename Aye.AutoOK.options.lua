@@ -91,7 +91,7 @@ Aye.options.args.AutoOK = {
 			order = 17,
 			type = "description",
 			name = "Auto |cffe6cc80Accept Role|r on Role Check Pupup.\n"
-				.. "|cffe6cc80Recommendation|r|cff9d9d9d: Enable only if your role does not change.|r",
+				.. "|cffe6cc80Recommendation|r|cff9d9d9d: Enable only if your role does not change.|r\n",
 		},
 		LFGListApplicationDialog = {
 			order = 19,
@@ -107,7 +107,7 @@ Aye.options.args.AutoOK = {
 			order = 20,
 			type = "description",
 			name = "Auto |cffe6cc80Accept|r Premade Application to custom group, leaving empty description.\n"
-				.. "|cffe6cc80Recommendation|r|cff9d9d9d: Enable only if your never describe your custom group applications.|r",
+				.. "|cffe6cc80Recommendation|r|cff9d9d9d: Enable only if your never describe your custom group applications.|r\n",
 		},
 		DisableTypeDELETEtoConfirm = {
 			order = 41,
@@ -126,7 +126,7 @@ Aye.options.args.AutoOK = {
 			order = 42,
 			type = "description",
 			name = "|cffe6cc80Disable|r |cff9d9d9d\"Type DELETE into the field to confirm.\"|r confirmation.\n"
-				.. "|cffe6cc80Recommendation|r|cff9d9d9d: Enable only if you always read carefully what item are you destroying.|r"
+				.. "|cffe6cc80Recommendation|r|cff9d9d9d: Enable only if you always read carefully what item are you destroying.|r\n"
 			,
 		},
 		CONFIRM_MERCHANT_TRADE_TIMER_REMOVAL = {
@@ -143,7 +143,7 @@ Aye.options.args.AutoOK = {
 			order = 46,
 			type = "description",
 			name = "Auto |cffe6cc80Accept|r Selling items that |cff9d9d9d\"will make it non-tradeable, even if you buy it back\"|r.\n"
-				.. "|cffe6cc80Recommendation|r|cff9d9d9d: Enable only if you always read carefully what item are you selling.|r"
+				.. "|cffe6cc80Recommendation|r|cff9d9d9d: Enable only if you always read carefully what item are you selling.|r\n"
 			,
 		},
 		TALKINGHEAD_REQUESTED = {
@@ -171,7 +171,7 @@ Aye.options.args.AutoOK = {
 			order = 62,
 			type = "description",
 			name = "Automatically |cffe6cc80Remove|r Talking Head Frame and it's talking sound.\n"
-				.. "|cffe6cc80Recommendation|r|cff9d9d9d: Enable only if you never want to see nor hear Talking Heads.|r"
+				.. "|cffe6cc80Recommendation|r|cff9d9d9d: Enable only if you never want to see nor hear Talking Heads.|r\n"
 			,
 		},
 		header81 = {
@@ -196,7 +196,8 @@ Aye.options.args.AutoOK = {
 				.. "|cffe6cc80Recommendation|r|cff9d9d9d: Enable only if want to always lead LFG PuG raids and never join into ongoing runs.|r"
 				.. " |cffe6cc80WARNING!|r|cff9d9d9d Choosing this option can increase your queue time a lot.\n\n|r"
 				.. "|cff9d9d9dThis works for LFR queues only, with the exception of fights with one boss only:\n"
-				.. " • Rift of Aln (Xavius)\n • Betrayer's Rise (Gul'dan)\n\n|r|cffe6cc80Purpose|cff9d9d9d: Avoid joining over and over into ongoing groups (ex. from 2nd boss).|r"
+				.. " • Rift of Aln (Xavius)\n • Betrayer's Rise (Gul'dan)\n • Deceiver's Fall (Kil'jaeden)\n\n|r"
+				.. "|cffe6cc80Purpose|cff9d9d9d: Avoid joining over and over into ongoing groups (ex. from 2nd boss).|r"
 			,
 		},
 		LFGDungeonReadyDialogLeaveQueueButton_desc = {
