@@ -62,8 +62,8 @@ Aye.options.args.AutoOK = {
 		},
 		LFGListInviteDialog = {
 			order = 13,
-			name = "|cffe6cc80Accept|r Group Invite",
-			desc = "Automatically |cffe6cc80Accept|r and |cffe6cc80Acknowledge|r |cff9d9d9dLFGListInviteDialog|r",
+			name = "|cffe6cc80Acknowledge|r Group Invite",
+			desc = "Automatically |cffe6cc80Acknowledge|r |cff9d9d9dLFGListInviteDialog|r",
 			type = "toggle",
 			width = "full",
 			get = function() return Aye.db.global.AutoOK.LFGListInviteDialog end,
@@ -75,6 +75,9 @@ Aye.options.args.AutoOK = {
 			type = "description",
 			name = "Auto |cffe6cc80Acknowledge|r and close popup with LFG rules showing after joining some LFG groups.\n"
 				.. "|cffe6cc80Recommendation|r|cff9d9d9d: Enable only if you always acknowledge LFG rules before joining a group.|r"
+				
+				.. "\n\n|TInterface\\ENCOUNTERJOURNAL\\UI-EJ-WarningTextIcon:0|t Since|r |cffe6cc8028.04.17|r,"
+				.. " |cffe6cc80Accepting|r Group Invite is |TInterface\\CHATFRAME\\UI-CHATICON-BLIZZ:0:2|t Protected.|r\n"
 			,
 		},
 		LFDRoleCheckPopupAcceptButton = {

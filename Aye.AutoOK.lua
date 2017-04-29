@@ -13,17 +13,6 @@ LFGListInviteDialog.AcknowledgeButton:HookScript("OnShow", function(self)
 		self:Click();
 	end;
 end);
---
--- PopUp OnShow
--- LFG rules showing after joining some premade groups
-LFGListInviteDialog.AcceptButton:HookScript("OnShow", function(self)
-	if
-			Aye.db.global.AutoOK.enable
-		and	Aye.db.global.AutoOK.LFGListInviteDialog
-	then
-		self:Click();
-	end;
-end);
 
 -- LFDRoleCheckPopupAcceptButton
 --
