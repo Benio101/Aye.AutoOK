@@ -36,9 +36,9 @@ Aye.options.args.AutoOK = {
 		description6 = {
 			order = 6,
 			type = "description",
-			name = "This module is currently temporary |cff9d9d9ddisabled|r at will and should no longer work.\n"
+			name = "\nThis module is currently temporary |cff9d9d9ddisabled|r at will and should no longer work.\n"
 				.. "|cff9d9d9dIf you wish to keep this module disabled, you should disable related addon completelly.\n"
-				.. "You can always re–enable module by re–enabling related addon addon the same way.\n|r"
+				.. "You can always re–enable module by re–enabling related addon addon the same way.|r"
 			,
 			hidden = function() return Aye.db.global.AutoOK.enable end,
 		},
@@ -54,6 +54,11 @@ Aye.options.args.AutoOK = {
 				Aye.libs.ConfigRegistry:NotifyChange("Aye");
 			end,
 			hidden = function() return not Aye.db.global.AutoOK.enable end,
+		},
+		description10 = {
+			order = 10,
+			type = "description",
+			name = "\n",
 		},
 		header11 = {
 			order = 11,
@@ -192,6 +197,11 @@ Aye.options.args.AutoOK = {
 			name = "Automatically |cffe6cc80Remove|r Talking Head Frame and it's talking sound.\n"
 				.. "|cffe6cc80Recommendation|r|cff9d9d9d: Enable only if you never want to see nor hear Talking Heads.|r\n"
 			,
+		},
+		description80 = {
+			order = 80,
+			type = "description",
+			name = "\n",
 		},
 		header81 = {
 			order = 81,
