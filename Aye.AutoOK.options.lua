@@ -149,6 +149,22 @@ Aye.options.args.AutoOK = {
 				.. "|cffe6cc80Recommendation|r|cff9d9d9d: Enable only if you always read carefully what item are you selling.|r\n"
 			,
 		},
+		LFG_LIST_ENTRY_EXPIRED_TOO_MANY_PLAYERS = {
+			order = 47,
+			name = "|cffe6cc80Dismiss|r |cff9d9d9d\"Group reached limit\"|r note",
+			desc = "Automatically |cffe6cc80Dismiss|r |cff9d9d9dLFG_LIST_ENTRY_EXPIRED_TOO_MANY_PLAYERS|r note",
+			type = "toggle",
+			width = "full",
+			get = function() return Aye.db.global.AutoOK.LFG_LIST_ENTRY_EXPIRED_TOO_MANY_PLAYERS end,
+			set = function(_, v) Aye.db.global.AutoOK.LFG_LIST_ENTRY_EXPIRED_TOO_MANY_PLAYERS = v end,
+			disabled = function() return not Aye.db.global.AutoOK.enable end,
+		},
+		description48 = {
+			order = 48,
+			type = "description",
+			name = "Auto |cffe6cc80Dismiss|r |cff9d9d9d\"" ..LFG_LIST_ENTRY_EXPIRED_TOO_MANY_PLAYERS .."\"|r note.\n"
+			,
+		},
 		TALKINGHEAD_REQUESTED = {
 			order = 61,
 			name = "|cffe6cc80Remove|r Talking Head",

@@ -56,12 +56,18 @@ end);
 -- PopUp OnShow
 -- selling items that "will make it non-tradeable, even if you buy it back"
 hooksecurefunc("StaticPopup_Show", function(self)
+	if not Aye.db.global.AutoOK.enable then return end;
+	
 	if self == "CONFIRM_MERCHANT_TRADE_TIMER_REMOVAL" then
-		if
-				Aye.db.global.AutoOK.enable
-			and	Aye.db.global.AutoOK.CONFIRM_MERCHANT_TRADE_TIMER_REMOVAL
-		then
+		if Aye.db.global.AutoOK.CONFIRM_MERCHANT_TRADE_TIMER_REMOVAL then
 			local popup = StaticPopup_Visible("CONFIRM_MERCHANT_TRADE_TIMER_REMOVAL");
+			_G[popup .."Button1"]:Click();
+		end;
+	end;
+	
+	if self == "LFG_LIST_ENTRY_EXPIRED_TOO_MANY_PLAYERS" then
+		if Aye.db.global.AutoOK.LFG_LIST_ENTRY_EXPIRED_TOO_MANY_PLAYERS then
+			local popup = StaticPopup_Visible("LFG_LIST_ENTRY_EXPIRED_TOO_MANY_PLAYERS");
 			_G[popup .."Button1"]:Click();
 		end;
 	end;
